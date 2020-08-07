@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import {Runtime, Inspector} from '@observablehq/runtime';
+import React, {useEffect, useRef} from 'react';
+import sunburst from './@d3/zoomable-sunburst';
 import './App.css';
 
-function App() {
+export default function App() {
+  const ref = useRef();
+
+  useEffect(
+    () => {
+      const runtime = new Runtime();
+      runtime.module(sunburst, (name) => {
+        if (name === "chart") {
+          return new Inspector(ref.current);
+        }
+      });
+      return () => runtime.dispose();
+    },
+    []
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Hello, Observable!</h1>
+      <div ref={ref} />
+    </>
   );
 }
-
-export default App;

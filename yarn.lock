@@ -1298,6 +1298,29 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
+"@observablehq/inspector@^3.2.0":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@observablehq/inspector/-/inspector-3.2.1.tgz#c953fd95f1b90fac6f39e41965a72cc079d3e465"
+  integrity sha512-U8EASUAUYCQmCprOF9HafRMnU4yyD0IXjRuDwAjBMjVpm36KXPzXWxHcdzlt/3CbIEu8GOhKQqHBAX9pv6OyUQ==
+  dependencies:
+    esm "^3.2.25"
+
+"@observablehq/runtime@^4.7.3":
+  version "4.7.3"
+  resolved "https://registry.yarnpkg.com/@observablehq/runtime/-/runtime-4.7.3.tgz#658c2d8592ef36e2da6d6c9dfbc9406834f8cd17"
+  integrity sha512-dTwcdRIGWWW6ghxGu0q5VRcG29it8OfK66JYIt/0e1/UljIhTUx3B/i3JXIygF/bHULQh0wwylP/UZH2r4v53g==
+  dependencies:
+    "@observablehq/inspector" "^3.2.0"
+    "@observablehq/stdlib" "^3.2.2"
+    esm "^3.0.84"
+
+"@observablehq/stdlib@^3.2.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@observablehq/stdlib/-/stdlib-3.3.2.tgz#4d758e9993b685c11433ef4b75c5c2079d1996dc"
+  integrity sha512-botHJWdpPPcDexyskFeoXsyrXJIcrlsjd9xccMEx5Xj8aDOXK9qzEgVQE1gsCx/kxdHHyMg4ubOZD6AYHAd8PQ==
+  dependencies:
+    d3-require "^1.2.4"
+
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.3.tgz#5405ee8e444ed212db44e79351f0c70a582aae25"
@@ -3491,6 +3514,11 @@ cyclist@^1.0.1:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
+d3-require@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/d3-require/-/d3-require-1.2.4.tgz#59afc591d5089f99fecd8c45ef7539e1fee112b3"
+  integrity sha512-8UseEGCkBkBxIMouLMPONUBmU8DUPC1q12LARV1Lk/2Jwa32SVgmRfX8GdIeR06ZP+CG85YD3N13K2s14qCNyA==
+
 d@1, d@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/d/-/d-1.0.1.tgz#8698095372d58dbee346ffd0c7093f99f8f9eb5a"
@@ -4175,6 +4203,11 @@ eslint@^6.6.0:
     table "^5.2.3"
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
+
+esm@^3.0.84, esm@^3.2.25:
+  version "3.2.25"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
+  integrity sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
 
 espree@^6.1.2:
   version "6.2.1"
