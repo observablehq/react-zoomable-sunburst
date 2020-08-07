@@ -25,3 +25,36 @@ const fileAttachments = new Map([["flare-2.json","/flare-2.json"]]);
 ```
 
 This step is only necessary because create-react-app does not support the standard [import.meta syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import.meta), and while there is a [@babel/plugin-syntax-import-meta](https://www.npmjs.com/package/@babel/plugin-syntax-import-meta), create-react-app does not allow you to add custom Babel plugins without ejecting.
+
+Lastly, to instantiate the notebook, see App.js:
+
+```js
+import {Runtime, Inspector} from '@observablehq/runtime';
+import React, {useEffect, useRef} from 'react';
+import sunburst from './@d3/zoomable-sunburst';
+import './App.css';
+
+export default function App() {
+  const ref = useRef();
+
+  useEffect(
+    () => {
+      const runtime = new Runtime();
+      runtime.module(sunburst, (name) => {
+        if (name === "chart") {
+          return new Inspector(ref.current);
+        }
+      });
+      return () => runtime.dispose();
+    },
+    []
+  );
+
+  return (
+    <>
+      <h1>Hello, Observable!</h1>
+      <div ref={ref} />
+    </>
+  );
+}
+```
